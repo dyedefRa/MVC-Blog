@@ -1,0 +1,121 @@
+﻿@model BLOGGER.Data.Uye
+@using BLOGGER.Data;
+@{
+    ViewBag.Title = "Profil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{ 
+    BloggerContext ctx = new BloggerContext();
+}
+
+<div class="col-md-8">
+    <h3 class="my-4">
+        @if (Convert.ToInt32(Session["aktifUyeId"]) == Model.Id)
+        {
+            <span> Profilim</span>
+
+
+        }
+        else
+        {
+            <span>'<span style="color:aquamarine;">@Model.AdSoyad</span>' Profili</span>
+        }
+
+    </h3>
+
+
+    <div>
+
+        <hr />
+        <dl class="dl-horizontal">
+
+
+
+            <dd>
+                <img width="200" height="200" src=@Url.Content(Model.Fotograf.Kucuk) class="rounded-circle" alt="Alternate Text" />
+            </dd>
+
+
+            <dt>
+                @Html.Label("Kullanıcı Adı :")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.KullaniciAdi)
+            </dd>
+
+
+
+            <dt>
+                @Html.Label("Email :")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dt>
+                @Html.Label("Ad soyad :")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AdSoyad)
+            </dd>
+
+            <dt>
+                @Html.Label("Kayıt olma tarihi :")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.OlusturulmaTarihi)
+            </dd>
+
+
+
+
+
+            <dt>
+                @Html.Label("Mevki :")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Yetki.Yetkisi)
+            </dd>
+
+        </dl>
+    </div>
+    @if (Model.Makale.Count > 0)
+    {
+        if (Model.Makale.Count == 1)
+        {
+            var tekmak = ctx.Makale.FirstOrDefault(x => x.UyeID == Model.Id);
+            <p style="font-weight:bold">Son Eklenen Makale :</p>
+            <p><a style="color:tomato" href=@Url.Content("/Home/MakaleDetay/"+tekmak.Id)>@tekmak.Baslik</a></p>
+        }
+        else
+        {
+            <p style="font-weight:bold">Son Eklenen Makaleler :</p>
+            foreach (var mak in ctx.Makale.Where(x => x.UyeID == Model.Id).OrderByDescending(x => x.OlusturmaTarihi).Take(5))
+            {
+                <p><a style="color:tomato" href=@Url.Content("/Home/MakaleDetay/"+mak.Id)>- @mak.Baslik (<span style="color:darkslategrey">@mak.OlusturmaTarihi.Value.ToLongDateString()</span>)</a></p>
+            }
+        }
+
+    }
+    <br />
+    <hr />
+    <br />
+ 
+    <p>
+        @if (Convert.ToInt32(Session["aktifUyeId"]) == Model.Id)
+        {
+            @Html.ActionLink("Profilimi Düzenle", "ProfilDuzenle", new { id = Model.Id })
+
+
+        }
+        |    @Html.ActionLink("Anasayfaya geri Dön", "Index") |
+    </p>
+    <br />
+    <br />
+    <br />
+</div>

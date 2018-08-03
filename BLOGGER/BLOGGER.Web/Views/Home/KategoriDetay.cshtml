@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "Kategoriler";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+
+<div class="col-md-8">
+    @using BLOGGER.Data
+
+    @using PagedList.Mvc
+
+    @model PagedList.IPagedList<Makale>
+
+
+    @helper Kisalt(string metin)
+        {
+            if (metin.Length > 200)
+            {
+                @metin.Substring(0, 200)
+            }
+            else
+            {
+                @metin
+            }
+}
+    @{
+        BloggerContext ctx = new BloggerContext();
+    }
+
+    <h1 class="my-4">
+
+      
+    </h1>
+    <br />
+    <br />
+
+    <!-- Blog Post -->
+    <!-- Blog Post -->
+    @foreach (var makale in Model)
+    {
+        <div class="card mb-4">
+            <a href=@Url.Action("MakaleDetay","Home",new { id = makale.Id })> <img class="card-img-top" src="@makale.Fotograf.Orta" alt="Card image cap"></a>
+            <div class="card-body">
+                <a href=@Url.Action("MakaleDetay","Home",new { id = makale.Id })><h2 class="card-title">@makale.Baslik</h2></a>
+                <p class="card-text">@Kisalt(makale.Icerik)</p>
+                <a href=@Url.Action("MakaleDetay","Home",new { id = makale.Id }) class="btn btn-primary">Daha fazlası &rarr;</a>
+            </div>
+            <div class="card-footer text-muted">
+                <p>||&nbsp;  @makale.OlusturmaTarihi.Value.ToString("dd MMMM yyyy hh:mmmm:ss")&nbsp; ||&nbsp; Etiket sayisi : @ctx.MakaleEtiket.Where(x => x.MakaleID == makale.Id).Count() &nbsp;|| &nbsp; Yazar :  <a href=@Url.Content("/Home/Profil/"+makale.UyeID)>@makale.Uye.AdSoyad</a> &nbsp; || </p>
+                Okunma : @makale.Okunma.Value  &nbsp;&nbsp;  Begeni : @makale.Begenme
+
+            </div>
+        </div>
+
+    }
+    <div class="row">
+        <div class="col-md-8 text-center">
+            <div class="pagination pagination-sm">
+                @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page }), PagedListRenderOptions.PageNumbersOnly)
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

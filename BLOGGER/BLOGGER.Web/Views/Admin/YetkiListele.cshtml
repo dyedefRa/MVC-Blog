@@ -1,0 +1,58 @@
+﻿@model IEnumerable<BLOGGER.Data.Yetki>
+
+@{
+    ViewBag.Title = "YetkiListele";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+@if (Session["yetkiOlaylari"]!=null)
+{
+<p style="color:red;font-weight:bold;"> @Session["yetkiOlaylari"].ToString()</p>
+}
+
+<p>
+    @Html.ActionLink("Yeni Yetki Oluştur", "YetkiEkle")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Yetkisi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aktif)
+        </th>
+        <th>
+            @Html.Label("Birey Sayısı")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Yetkisi)
+        </td>
+        @if (item.Aktif == true)
+    {
+        <td>
+            @Html.Label("Şuan Aktif (Varsayılan)")
+        </td>
+}
+else
+{
+    <td>
+        @Html.Label("Şuan Pasif")
+    </td>
+}
+        <td>
+            @Html.Label(item.Uye.Count().ToString())
+        </td>
+        <td>
+            @Html.ActionLink("Duzenle (ONERILMEZ)", "YetkiDuzenle", new { id = item.Id }) |
+
+            @Html.ActionLink("Sil (ONERILMEZ)", "YetkiSil", new { id = item.Id })
+        </td>
+    </tr>
+}
+
+</table>

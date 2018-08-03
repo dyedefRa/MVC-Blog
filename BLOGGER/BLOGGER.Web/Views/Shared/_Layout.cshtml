@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title> @ViewBag.Title - MVC BLOG</title>
+    <!-- Bootstrap core CSS -->
+    <link href=@Url.Content("/Content/Blog/vendor/bootstrap/css/bootstrap.min.css") rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href=@Url.Content("/Content/Blog/css/blog-home.css") rel="stylesheet">
+    @RenderSection("scripts", false)
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href=@Url.Content("/Home/Index")>Başlangıç</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href=@Url.Action("Index", "Home")>
+                            Anasayfa
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    @if (Session["aktifUyeYetkiId"] != null)
+                    {
+                        if (Convert.ToInt32(Session["aktifUyeYetkiId"].ToString()) == 1)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" target="_blank" href=@Url.Action("Index", "Admin")><p style="color:navy">Admin Paneli</p> </a>
+                            </li>
+                        }
+
+
+                    }
+                    @if (Session["aktifUyeId"] != null)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href=@Url.Action("Profil", "Home",new { id = Convert.ToInt32(Session["aktifUyeId"]) })><p style="color:red;">Profilim</p> </a>
+                        </li>
+                    }
+                    <li class="nav-item">
+                        <a class="nav-link" href=@Url.Action("Hakkimizda", "Home")>Hakkımızda</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href=@Url.Action("Iletisim", "Home")>İletişim</a>
+                    </li>
+                    @if (Session["aktifUyeId"] == null)
+                    {
+                        <li class="nav-item">
+                            <a  class="nav-link" style="color:white;" href=@Url.Action("UyeOl", "Home")>Uye Ol</a>
+                        </li>
+                    }
+                </ul>
+
+            </div>
+            @if (Session["aktifUyeAdi"] != null)
+            {
+                <p style="color:aqua;"> &nbsp; &nbsp;   @Session["aktifUyeAdi"].ToString() &nbsp; &nbsp; </p>
+
+                <a class="nav-header" href=@Url.Action("CikisYap", "Home")>Çıkış Yap</a>
+            }
+            else
+            {
+                <p style="color:aqua;"> &nbsp; &nbsp;  Hoşgeldin. Giriş yapmak ister misin ? &nbsp; &nbsp; </p>
+                <a class="nav-header" href=@Url.Action("GirisYap", "Home")>Giriş Yap</a>
+            }
+        </div>
+    </nav>
+    <!-- Page Content -->
+
+    <div class="container">
+        <br />
+
+        <div class="row">
+
+            <!-- Blog Entries Column -->
+
+            @RenderBody()
+
+            <!-- Sidebar Widgets Column -->
+            <div class="col-md-4">
+                <!-- Search Widget -->
+                @{
+                    Html.RenderPartial("BlogAraWidget", "Home");
+                }
+                <!-- Categories Widget -->
+                @{
+                    Html.RenderAction("KategoriWidget", "Home");
+                }
+                <!--POPULER MAKALELER-->
+                @{
+                    Html.RenderAction("PopulerMakalelerWidget", "Home");
+                }
+                <!--SON YORUMLAR-->
+                @{
+                    Html.RenderAction("SonYorumlar", "Home");
+                }
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; @DateTime.Now.Year</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src=@Url.Content("/Content/Blog/vendor/jquery/jquery.min.js")></script>
+
+
+    <script src=@Url.Content("/Content/Blog/vendor/bootstrap/js/bootstrap.bundle.min.js")></script>
+
+
+</body>
+</html>
+

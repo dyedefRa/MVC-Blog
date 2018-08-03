@@ -1,0 +1,3 @@
+﻿1) Admin makaleEkle olayında tinymce de html olduğu ııcn sorun yapıoyor. Tinymce ile sql e html atılamıyor.
+2)Admin => makale listelerken paged list olayında sorun var 
+3)Paroladeğiştirme olayı eksik Home>Profil>...

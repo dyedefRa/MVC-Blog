@@ -1,0 +1,28 @@
+﻿@using BLOGGER.BusinessLayer
+@model List<BLOGGER.Data.Makale>
+
+@{
+    Repository<BLOGGER.Data.Uye> uye = new Repository<BLOGGER.Data.Uye>();
+}
+@helper Kisalt(string metin)
+    {
+        if (metin.Length > 50)
+        {
+            @metin.Substring(0, 50)
+        }
+        else
+        {
+            @metin
+        }
+}
+
+<div class="card my-4">
+    <h5 class="card-header">Popüler Makaleler</h5>
+    @foreach (var mak in Model)
+    {
+
+    <div class="card-body">
+        <a  href=@Url.Content("/Home/MakaleDetay/"+mak.Id)> @Kisalt(mak.Baslik) </a> <span style="color:darkcyan;" > (@mak.Okunma.Value)</span>
+    </div>
+    }
+</div>

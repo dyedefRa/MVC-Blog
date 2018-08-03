@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+@using BLOGGER.Data
+@{
+    BloggerContext ctx = new BloggerContext();
+}
+
+<div class="row state-overview">
+    <a href=@Url.Content("/Admin/OnayliUyeler")>
+        <div class="col-lg-3 col-sm-6">
+            <section class="panel">
+                <div class="symbol terques">
+                    <i class="icon-user"></i>
+                </div>
+                <div class="value">
+                    <h1 class="count">
+                        @ctx.Uye.Count()
+
+                    </h1>
+                    <p>Toplam Kullanıcı Sayısı</p>
+                </div>
+
+            </section>
+        </div>
+    </a>
+    <a href=@Url.Content("/Admin/MakaleListele")>
+        <div class="col-lg-3 col-sm-6">
+            <section class="panel">
+                <div class="symbol red">
+                    <i class="icon-archive"></i>
+                </div>
+                <div class="value">
+                    <h1 class=" count2">
+                        @ctx.Makale.Count()
+                    </h1>
+                    <p>Toplam Makale</p>
+                </div>
+            </section>
+        </div>
+    </a>
+    <a href=@Url.Content("/Admin/YorumSekmesi")>
+        <div class="col-lg-3 col-sm-6">
+            <section class="panel">
+                <div class="symbol yellow">
+                    <i class="icon-comment"></i>
+                </div>
+                <div class="value">
+                    <h1 class=" count3">
+                        @ctx.Yorum.Count()
+                    </h1>
+                    <p>Toplam Yorum Sayısı</p>
+                </div>
+            </section>
+        </div>
+    </a>
+    
+        <div class="col-lg-3 col-sm-6">
+            <section class="panel">
+                <div class="symbol blue">
+                    <i class="icon-bar-chart"></i>
+                </div>
+                <div class="value">
+                    <h1 class=" count4">
+                        @ctx.Makale.Sum(x => x.Okunma)
+                    </h1>
+                    <p>Toplam Okunma</p>
+                </div>
+            </section>
+        </div>
+        
+</div>
+@*<script src="~/Content/Admin/js/jquery-1.8.3.min.js"></script>
+<script src="~/Content/Admin/js/count.js"></script>
+<script>
+    $(document).ready(function () {
+      
+        var uye = countUp(@ctx.Uye.Count());
+        $(".uyeSayisi").html(uye);
+    }
+        )
+</script>*@

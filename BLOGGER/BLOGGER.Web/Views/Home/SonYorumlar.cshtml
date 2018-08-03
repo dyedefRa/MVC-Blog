@@ -1,0 +1,29 @@
+﻿@using BLOGGER.BusinessLayer
+@model List<BLOGGER.Data.Yorum>
+
+@{
+    Repository<BLOGGER.Data.Uye> uye = new Repository<BLOGGER.Data.Uye>();
+}
+@helper Kisalt(string metin)
+    {
+if (metin.Length > 10)
+{
+    string met = metin.Substring(0, 10);
+    @met <span>...</span> 
+        }
+else
+{
+            @metin
+        }
+}
+
+<div class="card my-4">
+    <h5 class="card-header">Son Yorumlar</h5>
+    @foreach (var yorum in Model)
+    {
+      
+        <div class="card-body">
+            '<a style="color:darkcyan" href=@Url.Content("/Home/Profil/"+@uye.Select().FirstOrDefault(x => x.Id == yorum.UyeID).Id)>@uye.Select().FirstOrDefault(x => x.Id == yorum.UyeID).KullaniciAdi</a>' adlı kişi, '<a style="color:crimson;" href=@Url.Content("/Home/MakaleDetay/"+yorum.MakaleID)>@Kisalt(yorum.Makale.Baslik)</a>' makalesine     '<a href=@Url.Content("/Home/MakaleDetay/"+yorum.MakaleID)>@Kisalt(yorum.Icerik) </a>'yorumunu bıraktı.
+        </div>
+    }
+</div>

@@ -1,0 +1,98 @@
+﻿@model BLOGGER.Data.Uye
+
+@{
+    ViewBag.Title = "UyeOl";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="col-md-8">
+    <h1 class="my-4">
+        Üye ol
+        <small>*</small>
+    </h1>
+    <br />
+    <br />
+    @if (Session["uyeSorun"]!=null)
+    {
+         <p style="color:red;font-weight:bold">@Session["uyeSorun"].ToString()</p>
+        if (Session["uyeSorun"].ToString() == "Uye kaydı işleminiz başarıyla tamamlandı..")
+        {
+            @Html.ActionLink("Giriş için tıklayınız","GirisYap")
+        }
+    }
+
+    @using (Html.BeginForm("UyeOl","Home",FormMethod.Post,new { @enctype="multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.AdSoyad, "İsim Soyisim ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AdSoyad, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AdSoyad, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.KullaniciAdi, "Kullanıcı Adı ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.KullaniciAdi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.KullaniciAdi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Parola, "Parola", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Parola, new { htmlAttributes = new { @class = "form-control", @type = "Password" } })
+                @Html.ValidationMessageFor(model => model.Parola, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div>
+            @Html.Label("Parola Onayı", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBox("parolaTekrar", null, new { @class = "form-control", @type = "Password" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, "Email ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+
+
+        <div class="form-group">
+            @Html.Label("Fotoğraf Seç ")
+            <div class="col-md-10">
+                <input class="btn-info" type="file" name="foto" value="" />
+            </div>
+        </div>
+
+
+
+
+        <br />
+        <br />
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Üye Ol" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+    }
+
+
+</div>

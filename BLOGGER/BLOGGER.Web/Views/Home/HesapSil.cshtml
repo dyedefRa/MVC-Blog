@@ -1,0 +1,59 @@
+﻿
+@model BLOGGER.Data.Uye
+
+@if (Session["aktifUyeId"] == null)
+{
+    Response.Redirect("/Home/Index");
+    return;
+
+}
+else
+{
+    if (Model.Id != Convert.ToInt32(Session["aktifUyeId"]))
+    {
+        Response.Redirect("/Home/Index");
+    }
+}
+
+
+
+@{
+    ViewBag.Title = "HesapSil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="col-md-8">
+    <br />
+    <br />
+
+    @if (Session["hesapDurumu2"]!=null)
+    {
+    <p style="color:red;font-weight:bold;">@Session["hesapDurumu"].ToString()</p>
+    }
+    <h3>Hesabınızı silmek istediğinizden emin misiniz ?</h3>
+    <div>
+
+
+
+        @using (Html.BeginForm("HesapSil", "Home", FormMethod.Post))
+        {
+            try
+            {
+                Html.AntiForgeryToken();
+            }
+            catch
+            {
+
+            }
+
+            <div class="form-actions no-color">
+                <input type="hidden" name="id" value=@Model.Id />
+                <input type="submit" value="Hesabı sil" class="btn btn-default" /> |
+                @Html.ActionLink("Profilime geri dön", "Profil", new { id = Model.Id })
+            </div>
+        }
+    </div>
+</div>
+<br />
+<br />

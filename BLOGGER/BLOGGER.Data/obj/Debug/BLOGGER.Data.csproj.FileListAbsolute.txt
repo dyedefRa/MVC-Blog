@@ -1,0 +1,22 @@
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Data\bin\Debug\BLOGGER.Data.dll.config
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Data\bin\Debug\BLOGGER.Data.dll
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Data\bin\Debug\BLOGGER.Data.pdb
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Data\bin\Debug\EntityFramework.dll
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Data\bin\Debug\EntityFramework.xml
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Data\obj\Debug\BLOGGER.Data.csprojResolveAssemblyReference.cache
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Data\obj\Debug\BLOGGER.Data.csproj.CoreCompileInputs.cache
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Data\obj\Debug\BLOGGER.Data.dll
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Data\obj\Debug\BLOGGER.Data.pdb
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Data\bin\Debug\BLOGGER.Data.dll.config
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Data\bin\Debug\BLOGGER.Data.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Data\bin\Debug\BLOGGER.Data.pdb
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Data\bin\Debug\EntityFramework.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Data\bin\Debug\EntityFramework.xml
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Data\obj\Debug\BLOGGER.Data.csprojResolveAssemblyReference.cache
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Data\obj\Debug\BLOGGER.Data.csproj.CoreCompileInputs.cache
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Data\obj\Debug\BLOGGER.Data.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Data\obj\Debug\BLOGGER.Data.pdb

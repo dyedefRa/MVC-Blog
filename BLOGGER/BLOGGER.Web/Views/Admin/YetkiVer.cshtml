@@ -1,0 +1,82 @@
+﻿@model BLOGGER.Data.Uye
+
+@{
+    ViewBag.Title = "YetkiVer";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+
+<form action="/Admin/YetkiVer" method="post">
+    <div>
+        <input type="hidden" name="id" value=@Model.Id />
+        <hr />
+        <dl class="dl-horizontal">
+
+
+            <dt>
+                @Html.Label("Fotoğraf")
+            </dt>
+
+            <dd>
+                <img width="50" height="40" src=@Model.Fotograf.Kucuk alt="Alternate Text" />
+            </dd>
+
+            <dt>
+                @Html.Label("Kullanıcı Adı")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.KullaniciAdi)
+            </dd>
+
+
+
+            <dt>
+                @Html.Label("Ad Soyad")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AdSoyad)
+            </dd>
+
+            <dt>
+                @Html.Label("Oluşturulma Tarihi")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.OlusturulmaTarihi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Aktif)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Aktif)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Onay)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Onay)
+            </dd>
+
+
+            <dt>
+                @Html.Label("Yetki")
+            </dt>
+
+            <dd>
+                @Html.DropDownList("yetkisi", (IEnumerable<SelectListItem>)ViewBag.YetkiAdi)
+            </dd>
+
+        </dl>
+    </div>
+    <input type="submit" name="name" value="Onayla" />
+</form>
+<p>
+    @Html.ActionLink("Onayla", "YetkiyiOnayla", new { id = Model.Id }) |
+    @Html.ActionLink("Listeleye Geri Dön", "YetkiListele")
+</p>

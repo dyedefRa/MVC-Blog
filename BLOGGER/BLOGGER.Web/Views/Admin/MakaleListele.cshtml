@@ -1,0 +1,119 @@
+﻿@model PagedList.IPagedList<Makale>
+@using BLOGGER.Data
+@*UCUNCU PAGEDLIST ICIN GEREKLI EKLENTI TABKI PROJEDE YUKLU OLMASI DA GEREK*@
+@*MODELI IPAGEDLIST ILE ALCAN*@
+
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "MakaleListele";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+@helper Kisalt(string metin)
+    {
+        if (metin.Length > 50)
+        {
+            string sonuc = metin.Substring(0, 60) + "...";
+            @sonuc
+
+        }
+        else
+        {
+            @metin;
+        }
+}
+
+<h2>Makale Listesi</h2>
+
+<br />
+@if (Session["makaleSil"] != null)
+{
+    <p style="color:red;font-weight:bold">@Session["makaleSil"].ToString()</p>
+
+
+}
+
+
+
+
+<br />
+
+<p>
+    @Html.ActionLink("Yeni Makale Oluştur", "MakaleEkle")
+</p>
+
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.Label("Başlık")
+        </th>
+        <th>
+            @Html.Label("İçerik")
+        </th>
+        <th>
+            @Html.Label("Kategori Adı")
+        </th>
+        <th>
+            @Html.Label("Yazar Adı")
+        </th>
+        <th>
+            @Html.Label("Oluşturulma Tarihi")
+        </th>
+        <th>
+            @Html.Label("Okunma Sayısı")
+        </th>
+       
+
+
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <p>@Kisalt(item.Baslik)</p>
+            </td>
+            <td>
+                <p>@Kisalt(item.Icerik)</p>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kategori.Adi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Uye.KullaniciAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OlusturmaTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Okunma)
+            </td>
+            
+
+
+
+            <td>
+                @Html.ActionLink("Düzenle", "MakaleDuzenle", new { id = item.Id }) |
+                @Html.ActionLink("Detaylar", "MakaleDetay", new { id = item.Id }) |
+                @Html.ActionLink("Sil", "MakaleSil", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+
+
+
+
+</table>
+
+<div class="row">
+    <div class="col-md-8 text-center">
+        <div class="pagedList pagination">
+            @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page }), PagedListRenderOptions.PageNumbersOnly)
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+c:\users\asus\source\repos\BLOGGER\BLOGGER.BusinessLayer\bin\Debug\BLOGGER.BusinessLayer.dll
+c:\users\asus\source\repos\BLOGGER\BLOGGER.BusinessLayer\bin\Debug\BLOGGER.BusinessLayer.pdb
+c:\users\asus\source\repos\BLOGGER\BLOGGER.BusinessLayer\obj\Debug\BLOGGER.BusinessLayer.csprojResolveAssemblyReference.cache
+c:\users\asus\source\repos\BLOGGER\BLOGGER.BusinessLayer\obj\Debug\BLOGGER.BusinessLayer.csproj.CoreCompileInputs.cache
+c:\users\asus\source\repos\BLOGGER\BLOGGER.BusinessLayer\obj\Debug\BLOGGER.BusinessLayer.dll
+c:\users\asus\source\repos\BLOGGER\BLOGGER.BusinessLayer\obj\Debug\BLOGGER.BusinessLayer.pdb
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.BusinessLayer\bin\Debug\BLOGGER.BusinessLayer.dll.config
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.BusinessLayer\bin\Debug\BLOGGER.Data.dll
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.BusinessLayer\bin\Debug\BLOGGER.Data.pdb
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.BusinessLayer\bin\Debug\BLOGGER.Data.dll.config
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.BusinessLayer\bin\Debug\BLOGGER.BusinessLayer.dll.config
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.BusinessLayer\bin\Debug\BLOGGER.BusinessLayer.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.BusinessLayer\bin\Debug\BLOGGER.BusinessLayer.pdb
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.BusinessLayer\bin\Debug\BLOGGER.Data.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.BusinessLayer\bin\Debug\BLOGGER.Data.pdb
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.BusinessLayer\bin\Debug\BLOGGER.Data.dll.config
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.BusinessLayer\obj\Debug\BLOGGER.BusinessLayer.csprojResolveAssemblyReference.cache
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.BusinessLayer\obj\Debug\BLOGGER.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.BusinessLayer\obj\Debug\BLOGGER.BusinessLayer.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.BusinessLayer\obj\Debug\BLOGGER.BusinessLayer.pdb

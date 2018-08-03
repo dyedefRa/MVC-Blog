@@ -1,0 +1,97 @@
+﻿@model BLOGGER.Data.Uye
+
+@{
+    ViewBag.Title = "UyeSil";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+
+
+<h3>Üyeyi Kalıcı olarak silmek istediğinizden emin misiniz?</h3>
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Label("Fotoğraf :")
+        </dt>
+
+        <dd>
+            <img src=@Url.Content(Model.Fotograf.Kucuk) alt="Alternate Text" />
+        </dd>
+        <br />
+        <dt>
+            @Html.Label("Ad Soyad :")
+        </dt>
+
+        <dd>
+            @Html.Label(Model.AdSoyad)
+        </dd>
+
+        <dt>
+            @Html.Label("Kullanıcı Adı :")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KullaniciAdi)
+        </dd>
+
+
+
+        <dt>
+            @Html.Label("Email :")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+
+
+        <dt>
+            @Html.Label("Kayıt Tarihi :")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OlusturulmaTarihi)
+        </dd>
+
+
+
+
+
+
+        <dt>
+            @Html.Label("Yetkisi :")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Yetki.Yetkisi)
+        </dd>
+        <dt>
+            @Html.Label("Onay Durumu :")
+        </dt>
+
+        <dd>
+            @if (Model.Onay == true)
+    {
+        @Html.Label("Onayli")
+}
+else
+{
+        @Html.Label("Onaysiz")
+}
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="hidden" name="id" value=@Model.Id />
+            <input type="submit" value="Sil" class="btn btn-default" /> |
+            @Html.ActionLink("Onaylı üyeleri gör", "OnayliUyeler")
+        </div>
+    }
+</div>

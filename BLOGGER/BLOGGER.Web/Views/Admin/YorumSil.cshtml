@@ -1,0 +1,78 @@
+﻿@model BLOGGER.Data.Yorum
+@using BLOGGER.Data
+@{
+    ViewBag.Title = "YorumSil";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+@{ 
+    BloggerContext ctx = new BloggerContext();
+}
+
+<h3>Bu yorumu silmek istediğinize emin misiniz?</h3>
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Label("Makale Adı")
+        </dt>
+
+        <dd>
+            <a href=@Url.Content("/Admin/MakaleDetay/"+Model.MakaleID)>@Html.DisplayFor(model => model.Makale.Baslik)</a>
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Icerik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Icerik)
+        </dd>
+
+        <dt>
+            @Html.Label("Uye Adı")
+        </dt>
+
+        <dd>
+            <a href=@Url.Content("/Admin/OnayDurumu/"+Model.UyeID)> @Html.Label(ctx.Uye.FirstOrDefault(x => x.Id == Model.UyeID).KullaniciAdi)</a>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OlusturmaTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OlusturmaTarihi)
+        </dd>
+
+      
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Onay)
+        </dt>
+
+        <dd>
+            @if (Model.Onay==true)
+            {
+                Html.Label("Onaylı");
+            }
+            else
+            {
+                Html.Label("Onaysız");
+            }
+        </dd>
+
+
+
+    </dl>
+
+    @using (Html.BeginForm("YorumSil","Admin",FormMethod.Post)) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="hidden" name="id" value=@Model.Id />
+            <input type="submit" value="Sil" class="btn btn-default" /> |
+            @Html.ActionLink("Listeye geri Dön","YorumSekmesi")
+        </div>
+    }
+</div>

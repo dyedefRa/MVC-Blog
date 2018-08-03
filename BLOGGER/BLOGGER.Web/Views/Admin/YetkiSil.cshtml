@@ -1,0 +1,51 @@
+﻿@model BLOGGER.Data.Yetki
+
+@{
+    ViewBag.Title = "YetkiSil";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+
+
+<h3>Yetkiyi silmek istediğinize emin misiniz? (Sistemde hata meydana gelecektir. Lütfen silmeyiniz...)</h3>
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Yetkisi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Yetkisi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aktif)
+        </dt>
+
+        @if (Model.Aktif == true)
+    {
+        <dd>
+            @Html.Label("Aktif")
+        </dd>
+}
+else
+{
+    <dd>
+        @Html.Label("Pasif ")
+    </dd>
+}
+
+    </dl>
+
+    @using (Html.BeginForm("YetkiSil","Admin",FormMethod.Post)) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="hidden" name="id" value=@Model.Id />
+            <input type="submit" value="Sil (ONERILMEZ)" class="btn btn-default" /> |
+            @Html.ActionLink("Listeye Geri Dön", "YetkiListele")
+        </div>
+    }
+</div>

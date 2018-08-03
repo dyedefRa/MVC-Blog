@@ -1,0 +1,88 @@
+﻿@model BLOGGER.Data.Makale
+
+@{
+    ViewBag.Title = "MakaleDetay";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h2>Makale Detayı</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.Label("Yazar Adı :")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Uye.KullaniciAdi)
+        </dd>
+        <dt>
+            @Html.Label("Kategori Adı :")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kategori.Adi)
+        </dd>
+        <dt>
+            @Html.Label("Başlık :")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Baslik)
+        </dd>
+
+        <dt>
+            @Html.Label("İçerik :")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Icerik)
+        </dd>
+
+        <dt>
+            @Html.Label("Oluşturma Tarihi :")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OlusturmaTarihi)
+        </dd>
+
+        <dt>
+            @Html.Label("Okunma Sayısı :")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Okunma)
+        </dd>
+
+        <dt>
+            @Html.Label("Beğenme Sayısı :")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Begenme)
+        </dd>
+
+
+
+        <dt>
+            @Html.Label("Makale Resmi :")
+        </dt>
+
+        <dd>
+            <img src="@Model.Fotograf.Orta" alt="Alternate Text" />
+        </dd>
+
+
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "MakaleDuzenle", new { id = Model.Id }) |
+    @Html.ActionLink("Listeye Geri Dön", "MakaleListele")
+</p>

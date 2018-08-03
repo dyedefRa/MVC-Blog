@@ -1,0 +1,84 @@
+﻿@model IEnumerable<BLOGGER.Data.Uye>
+
+@{
+    ViewBag.Title = "OnayliUyeler";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h2>Onaylı Üyeler</h2>
+
+<br />
+<br />
+@if (Session["uyeSilmeOlayi"] != null)
+{
+    <p style="color:red;font-weight:bold;">@Session["uyeSilmeOlayi"].ToString()</p>
+
+}
+@if (Session["uyeOnayOlayi"] != null)
+{
+    <p style="color:red;font-weight:bold;">@Session["uyeOnayOlayi"].ToString()</p>
+
+}
+@if (Session["yetkilendirmeOlayi"] != null)
+{
+    <p style="color:red;font-weight:bold;">@Session["yetkilendirmeOlayi"].ToString()</p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.Label("Kullanıcı Adı")
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.Label("Ad Soyad")
+        </th>
+        <th>
+            @Html.Label("Kayıt Tarihi ")
+        </th>
+
+
+        <th>
+            @Html.Label("Fotoğraf ")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Yetki.Yetkisi)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.KullaniciAdi)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdSoyad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OlusturulmaTarihi)
+            </td>
+
+
+            <td>
+                <img width="50" height="40" src=@item.Fotograf.Kucuk alt="Alternate Text" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Yetki.Yetkisi)
+            </td>
+            <td>
+                @Html.ActionLink("Onay Durumu", "OnayDurumu", new { id = item.Id }) |
+                @Html.ActionLink("Yetki Al/Ver", "YetkiVer", new { id = item.Id }) |
+                @Html.ActionLink("Üyeyi Sil", "UyeSil", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

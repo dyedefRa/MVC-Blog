@@ -1,0 +1,84 @@
+c:\users\asus\source\repos\BLOGGER\BLOGGER.Web\bin\BLOGGER.Web.dll.config
+c:\users\asus\source\repos\BLOGGER\BLOGGER.Web\bin\BLOGGER.Web.dll
+c:\users\asus\source\repos\BLOGGER\BLOGGER.Web\bin\BLOGGER.Web.pdb
+c:\users\asus\source\repos\BLOGGER\BLOGGER.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\asus\source\repos\BLOGGER\BLOGGER.Web\bin\Microsoft.Web.Infrastructure.dll
+c:\users\asus\source\repos\BLOGGER\BLOGGER.Web\bin\System.Web.Helpers.dll
+c:\users\asus\source\repos\BLOGGER\BLOGGER.Web\bin\System.Web.Mvc.dll
+c:\users\asus\source\repos\BLOGGER\BLOGGER.Web\bin\System.Web.Razor.dll
+c:\users\asus\source\repos\BLOGGER\BLOGGER.Web\bin\System.Web.Webpages.Deployment.dll
+c:\users\asus\source\repos\BLOGGER\BLOGGER.Web\bin\System.Web.Webpages.dll
+c:\users\asus\source\repos\BLOGGER\BLOGGER.Web\bin\System.Web.Webpages.Razor.dll
+c:\users\asus\source\repos\BLOGGER\BLOGGER.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\asus\source\repos\BLOGGER\BLOGGER.Web\bin\System.Web.Razor.xml
+c:\users\asus\source\repos\BLOGGER\BLOGGER.Web\bin\System.Web.Webpages.xml
+c:\users\asus\source\repos\BLOGGER\BLOGGER.Web\bin\System.Web.Webpages.Deployment.xml
+c:\users\asus\source\repos\BLOGGER\BLOGGER.Web\bin\System.Web.Webpages.Razor.xml
+c:\users\asus\source\repos\BLOGGER\BLOGGER.Web\bin\System.Web.Helpers.xml
+c:\users\asus\source\repos\BLOGGER\BLOGGER.Web\bin\System.Web.Mvc.xml
+c:\users\asus\source\repos\BLOGGER\BLOGGER.Web\obj\Debug\BLOGGER.Web.csprojResolveAssemblyReference.cache
+c:\users\asus\source\repos\BLOGGER\BLOGGER.Web\obj\Debug\BLOGGER.Web.csproj.CoreCompileInputs.cache
+c:\users\asus\source\repos\BLOGGER\BLOGGER.Web\obj\Debug\BLOGGER.Web.dll
+c:\users\asus\source\repos\BLOGGER\BLOGGER.Web\obj\Debug\BLOGGER.Web.pdb
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Web\bin\BLOGGER.BusinessLayer.dll
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Web\bin\BLOGGER.Data.dll
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Web\bin\EntityFramework.dll
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Web\bin\BLOGGER.BusinessLayer.pdb
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Web\bin\BLOGGER.BusinessLayer.dll.config
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Web\bin\BLOGGER.Data.pdb
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Web\bin\BLOGGER.Data.dll.config
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Web\bin\EntityFramework.xml
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Web\bin\EntityFramework.SqlServer.dll
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Web\bin\EntityFramework.SqlServer.xml
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Web\bin\PagedList.dll
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Web\bin\PagedList.Mvc.dll
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Web\bin\PagedList.xml
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Web\bin\PagedList.Mvc.xml
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Web\bin\GridMvc.dll
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Web\bin\Microsoft.Web.Helpers.dll
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Web\bin\WebMatrix.Data.dll
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Web\bin\WebMatrix.WebData.dll
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Web\bin\WebMatrix.Data.xml
+C:\Users\Asus\source\repos\BLOGGER\BLOGGER.Web\bin\WebMatrix.WebData.xml
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\BLOGGER.Web.dll.config
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\BLOGGER.Web.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\BLOGGER.Web.pdb
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\BLOGGER.BusinessLayer.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\BLOGGER.Data.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\EntityFramework.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\EntityFramework.SqlServer.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\GridMvc.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\Microsoft.Web.Helpers.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\PagedList.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\PagedList.Mvc.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\System.Web.Helpers.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\System.Web.Mvc.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\System.Web.Razor.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\System.Web.WebPages.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\System.Web.WebPages.Razor.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\WebMatrix.Data.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\WebMatrix.WebData.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\BLOGGER.BusinessLayer.pdb
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\BLOGGER.BusinessLayer.dll.config
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\BLOGGER.Data.pdb
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\BLOGGER.Data.dll.config
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\EntityFramework.xml
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\EntityFramework.SqlServer.xml
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\PagedList.xml
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\PagedList.Mvc.xml
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\System.Web.Helpers.xml
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\System.Web.Razor.xml
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\System.Web.WebPages.xml
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\WebMatrix.Data.xml
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\WebMatrix.WebData.xml
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\bin\System.Web.Mvc.xml
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\obj\Debug\BLOGGER.Web.csprojResolveAssemblyReference.cache
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\obj\Debug\BLOGGER.Web.csproj.CoreCompileInputs.cache
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\obj\Debug\BLOGGER.Web.dll
+C:\Users\Asus\source\repos\AAA.BITEN PROJELER\WEB\BLOGGER\BLOGGER.Web\obj\Debug\BLOGGER.Web.pdb

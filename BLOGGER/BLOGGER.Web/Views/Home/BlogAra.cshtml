@@ -1,0 +1,69 @@
+﻿@model IEnumerable<BLOGGER.Data.Makale>
+
+@{
+    ViewBag.Title = "BlogAra";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-8">
+    <h3>Bulunan makaleler</h3>
+
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.Label("Kategori Adı")
+            </th>
+            <th>
+                @Html.Label("Yazar")
+            </th>
+            <th>
+                @Html.Label("Fotoğraf")
+            </th>
+            <th>
+                @Html.Label("Makale Başlık")
+            </th>
+
+            <th>
+                @Html.Label("Oluşturulma Tarihi")
+            </th>
+            <th>
+                @Html.Label("Okunma sayısı")
+            </th>
+
+
+
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a href=@Url.Content("/Home/KategoriDetay/"+item.KategoriID)> @Html.DisplayFor(modelItem => item.Kategori.Adi)</a>
+                </td>
+                <td>
+                    <a href=@Url.Content("/Home/Profil/"+item.UyeID)>   @Html.DisplayFor(modelItem => item.Uye.KullaniciAdi)</a>
+                </td>
+                <td>
+                    <a href=@Url.Content("/Home/makaleDetay/"+item.Id)> <img width="70" height="40" src=@item.Fotograf.Orta alt="Alternate Text" /> </a>
+</td>
+                <td>
+                    <a href=@Url.Content("/Home/makaleDetay/"+item.Id)> @Html.DisplayFor(modelItem => item.Baslik)</a>
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.OlusturmaTarihi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Okunma)
+                </td>
+
+
+
+            </tr>
+        }
+
+    </table>
+
+</div>

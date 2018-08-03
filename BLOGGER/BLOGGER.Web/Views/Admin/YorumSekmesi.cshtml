@@ -1,0 +1,77 @@
+﻿@model IEnumerable<BLOGGER.Data.Yorum>
+@using BLOGGER.Data
+@{
+    ViewBag.Title = "YorumSekmesi";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+@{
+    BloggerContext ctx = new BloggerContext();
+}
+
+@if (Session["yorumOlayi"] != null)
+{
+    <p style="color:red;font-weight:bold;">@Session["yorumOlayi"].ToString() </p>
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.Label("Makale Adı")
+        </th>
+        <th>
+            @Html.Label("Yorum İçeriği")
+        </th>
+        <th>
+            @Html.Label("Üye Adı")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OlusturmaTarihi)
+        </th>
+        <th>
+            @Html.Label("YorumOnayıDurumu")
+        </th>
+
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Makale.Baslik)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Icerik)
+            </td>
+            <td>
+                <a href=@Url.Content("/Admin/OnayDurumu/"+item.UyeID)>  @Html.Label(ctx.Uye.FirstOrDefault(x => x.Id == item.UyeID).KullaniciAdi)</a>
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.OlusturmaTarihi)
+            </td>
+
+            @if (item.Onay == true)
+            {
+                <td>  @Html.Label("Onaylı") </td>
+            }
+            else
+            {
+                <td>
+                    @Html.Label("Onaysız")
+                </td>
+            }
+
+
+
+            <td>
+                @Html.ActionLink("Düzenle", "YorumDuzenle", new { id = item.Id }) |
+
+                @Html.ActionLink("Yorumu Sil", "YorumSil", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

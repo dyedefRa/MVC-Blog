@@ -1,0 +1,198 @@
+﻿@model BLOGGER.Data.Makale
+@using BLOGGER.Data
+@using Microsoft.Web.Helpers
+
+@{
+    ViewBag.Title = "MakaleDetay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    BloggerContext ctx = new BloggerContext();
+    List<MakaleEtiket> makaleEtiketList = ctx.MakaleEtiket.Where(x => x.MakaleID == Model.Id).ToList();
+
+}
+
+
+<!-- Post Content Column -->
+<div class="col-lg-8">
+    <!-- Title -->
+    <h1 class="mt-4">@Model.Baslik</h1>
+    <!-- Author -->
+    <p class="lead">
+        Yazar :
+        <a href=@Url.Content("/Home/Profil/"+Model.UyeID)>@Model.Uye.KullaniciAdi</a>
+    </p>
+    <hr>
+    <!-- Date/Time -->
+    <p>Oluşturulma Tarihi : @Model.OlusturmaTarihi</p>
+    <p>Kategori  :&nbsp; <a href=@Url.Content("/Home/KategoriDetay/"+Model.KategoriID)>@Model.Kategori.Adi</a>&nbsp; || &nbsp;  Begeni : @Model.Begenme &nbsp;  ||&nbsp;  Okunma : <span id="okunma"> @Model.Okunma</span> &nbsp;|| &nbsp;Yorum sayisi : @Model.Yorum.Where(x => x.Onay == true).Count() </p>
+    <p>
+        Etiketler :&nbsp;
+        @foreach (var item in makaleEtiketList)
+        {
+            @item.Etiket.Adi
+            <span> , </span>
+        }
+    </p>
+    <hr>
+    @*"http://placehold.it/900x300"*@
+    <!-- Preview Image -->
+    <img class="img-fluid rounded" src=@Url.Content(Model.Fotograf.Buyuk) alt="">
+    <hr>
+    <!-- Post Content -->
+    <p class="lead"> <marque>@Model.Baslik</marque> </p>
+    <p>@Model.Icerik</p>
+
+    <hr />
+    @*---------
+    IKI HR ARASI MAPPING OLAYI*@
+    <form method="post">
+        <fieldset>
+            <div>
+                <label for="address"> Address:</label>
+                <input style="width:300px;" type="text" name="address" value='@Request["address"]' />
+                <input type="submit" value="Map It!" />
+            </div>
+        </fieldset>
+    </form>
+    @if (IsPost)
+    {
+        Maps.GetGoogleHtml(Request.Form["address"], width: "800", height: "500");
+    }
+    @{
+        Maps.GetGoogleHtml("Samsun", width: "800", height: "500");
+    }
+    <hr>
+
+    <div id="fb-root"></div>
+    @*---------------------------------------------------------
+        FACEBOOK YORUM SCRIPTI*@
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/tr_TR/sdk.js#xfbml=1&version=v2.12&appId=150694972297572&autoLogAppEvents=1';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+    @*--------------------------------------------
+        FACEBOOK SADECE BIR BUTON*@
+    @Facebook.LikeButton("", "standard", false, 450, 80, "like", null, null, null)
+
+
+
+    <hr />
+    @*--------------------------------------------
+        FACEBOOK VIEW*@
+    <div class="fb-comments" data-href="http://localhost:54159/Home/MakaleDetay/1" data-numposts="5"></div>
+    <hr>
+    <!-- Comments Form -->
+    @if (Session["aktifUyeId"] != null)
+    {
+        int uyeID = Convert.ToInt32(Session["aktifUyeId"]);
+        if (ctx.Uye.FirstOrDefault(x => x.Id == uyeID).Onay == false)
+        {
+            <span style="color:red;">Yorum yapmak için hesabınızın onaylanmış olması gerek. <p>(Hesap onaylanması ortalama 1 gün sürer.)</p></span>
+        }
+        else
+        {
+            <div class="card my-4">
+                <h5 class="card-header">Yorum Bırak :</h5>
+                <div class="card-body">
+                    <form action="/Home/YorumGonder" method="post">
+                        <div class="form-group">
+                            <input type="hidden" name="makaleID" value=@Model.Id />
+                            <textarea name="icerik" class="form-control" rows="4"></textarea>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Yorumu Gönder</button>
+                    </form>
+                </div>
+            </div>
+        }
+    }
+    <br />
+    <br />
+    <br />
+
+    YORUMLAR
+    <br />
+    <hr />
+    <!-- Single Comment -->
+    @foreach (var yorum in Model.Yorum)
+    {
+
+        if (yorum.Onay == true)
+        {
+            <div class="card my-4">
+                <div class="media mb-4">
+                    &nbsp; &nbsp;
+                    <a href=@Url.Content("/Home/Profil/"+yorum.UyeID)>
+                        <img width="50" height="50" class="d-flex mr-3 rounded-circle" src=@ctx.Uye.FirstOrDefault(y => y.Id == yorum.UyeID.Value).Fotograf.Kucuk alt="">
+                    </a>
+                    <div class="media-body">
+                        <div class="card-header">   <a href=@Url.Content("/Home/Profil/" + yorum.UyeID)>  <h5 class="mt-0">@ctx.Uye.FirstOrDefault(x => x.Id == yorum.UyeID).KullaniciAdi </h5> </a></div>
+                        @yorum.Icerik
+                    </div>
+                </div>
+                @if (yorum.UyeID == Convert.ToInt32(Session["aktifUyeId"]))
+                {
+                    <a style="margin-left:50px;" href=@Url.Content("/Home/YorumSil/"+yorum.Id+"/"+Model.Id)>Yorumu Sil</a>
+                }
+
+            </div>
+        }
+    }
+    <!-- Comment with nested comments -->
+    <br />
+    <hr />
+    <br />
+</div>
+
+
+<script src="~/Content/jquery-3.2.1.min.js"></script>
+
+<script>
+    $(function () {
+
+        $.ajax({
+            type: 'POST',
+            url: "/Home/OkunmaArtir/",
+            data: { Id:@Model.Id},
+            success: function (veri) {
+                $("#okunma").html(veri);
+
+            },
+            error:function() {
+                alert("HATA");
+            }
+        });
+    }
+    );
+
+</script>
+
+@*<script type="text/javascript">
+        $(function () {
+            alert("asfasf");
+            $("#yorumGonder").click(function () {
+                var makaleID = $(this).data("makaleID");
+                var icerik = $("#icerik").val();
+                $.ajax({
+                    type: 'POST',
+                    data: { makaleID=makaleID, icerik=icerik },
+                    url: "/Home/YorumGonder/",
+                    dataType: 'json',
+                    success: function (veri) {
+                        alert("Yorum Gonderildi.");
+                    }
+                })
+            });
+
+        })
+    </script>*@
+
+
+
+
+

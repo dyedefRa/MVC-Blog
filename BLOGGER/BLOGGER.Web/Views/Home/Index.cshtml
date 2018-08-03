@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+
+<div class="col-md-8">
+    @if (Session["hesapDurumu"] != null)
+    {
+        <p style="color:red;font-weight:bold;">@Session["hesapDurumu"].ToString()</p>
+    }
+
+   
+
+
+
+
+
+
+
+    @{
+            Html.RenderAction("MakaleWidget", "Home");
+        }
+</div>
