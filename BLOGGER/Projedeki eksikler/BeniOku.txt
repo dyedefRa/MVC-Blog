@@ -1,3 +1,4 @@
-﻿1) Admin makaleEkle olayında tinymce de html olduğu ııcn sorun yapıoyor. Tinymce ile sql e html atılamıyor.
-2)Admin => makale listelerken paged list olayında sorun var 
-3)Paroladeğiştirme olayı eksik Home>Profil>...
+1) Admin tarafında makale ekleme olayında tinymce de html içerik atıldığı için sorun yaşanılıyorç Tinymce ile sql e html atılamıyor.
+2) Admin -makale listelerken paged list olayında sorun var 
+3) Parola değiştirme sayfası eksik Home>Profil>...
+4) Admin tarafında  bildirim mesajları Session'lar ile viewlere aktarıldı.Bu projeyi önceden yaptığım için böyle bir gereksiz çözüme başvurmuşum.Bildirimler için TempData daha mantıklı olur diye düşünüyorum.
